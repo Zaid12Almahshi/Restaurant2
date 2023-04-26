@@ -1,0 +1,79 @@
+﻿@model Restaurant.ViewModels.MasterServiceModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1 class="card-title">Edit</h1>
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-controller="MasterService" asp-action="Index">MasterService</a></li>
+        <li class="breadcrumb-item active"><a asp-controller="MasterService" asp-action="Edit">Edit</a></li>
+    </ol>
+</nav>
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">MasterService</h5>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <form asp-action="Edit" enctype="multipart/form-data">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <input type="hidden" asp-for="MasterServiceId" />
+                                <div class="form-group">
+                                    <label asp-for="MasterServiceTitle" class="col-sm-12 col-form-label"></label>
+                                    <input asp-for="MasterServiceTitle" class="form-control" />
+                                    <span asp-validation-for="MasterServiceTitle" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="MasterServiceDesc" class="col-sm-12 col-form-label"></label>
+                                    <input asp-for="MasterServiceDesc" class="form-control" />
+                                    <span asp-validation-for="MasterServiceDesc" class="text-danger"></span>
+                                </div>
+                                 <div class="form-group">
+                                    <label asp-for="MasterServiceLogo" class="col-sm-12 col-form-label"></label>
+                                    <input asp-for="MasterServiceLogo" class="form-control" />
+                                    <span asp-validation-for="MasterServiceLogo" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="File" class="col-sm-12 col-form-label"></label>
+                                    <input asp-for="File" class="form-control" />
+                                    <span asp-validation-for="File" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="MasterServiceImage" class="col-sm-12 col-form-label" hidden="hidden"></label>
+                                    <input asp-for="MasterServiceImage" class="form-control" hidden="hidden" />
+                                    <span asp-validation-for="MasterServiceImage" class="text-danger" hidden="hidden"> </span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="MasterServiceImage" class="col-sm-12 col-form-label"></label>
+                                    <img src="~/Images/MasterService/@Model.MasterServiceImage" style="max-width:50px" />
+
+                                </div>
+                                <div class="form-group form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" asp-for="IsActive" /> @Html.DisplayNameFor(model => model.IsActive)
+                                    </label>
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="submit" value="Save" class="btn btn-primary" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+                    <div>
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+

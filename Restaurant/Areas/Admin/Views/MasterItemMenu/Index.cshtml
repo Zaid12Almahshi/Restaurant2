@@ -1,0 +1,114 @@
+﻿@model IEnumerable<Restaurant.Models.MasterItemMenu>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h5 class="card-title">MasterItemMenu</h5>
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-controller="MasterItemMenu" asp-action="Index">MasterItemMenu</a></li>
+
+    </ol>
+</nav>
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="card">
+                <div class="card-body">
+
+                    <p></p>
+                    <p>
+                        <a class="btn btn-primary" asp-action="Create">Create New</a>
+                    </p>
+                    <table class="table datatable">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.MasterItemMenuTitle)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.MasterItemMenuBreef)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.MasterItemMenuDesc)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.MasterItemMenuPrice)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.MasterItemMenuImageUrl)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.MasterItemMenuDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.MasterCategoryMenu)
+                                </th>
+                      
+
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MasterItemMenuTitle)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MasterItemMenuBreef)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MasterItemMenuDesc)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MasterItemMenuPrice)
+                                    </td>
+                                    <td>
+                                        <img src="~/Images/MasterItemMenu/@item.MasterItemMenuImageUrl" style="max-width:50px" />
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MasterItemMenuDate)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MasterCategoryMenu.MasterCategoryMenuName)
+                                    </td>
+                                
+                                    <td>
+                                        <a asp-action="Edit" asp-route-id="@item.MasterItemMenuId"><i class="bi bi-pencil-square"></i></a> |
+                                        <a asp-action="Details" asp-route-id="@item.MasterItemMenuId"><i class="fa-fa-sharp fa-solid fa-circle-info"></i></a> |
+                                        <a asp-action="Delete" asp-route-id="@item.MasterItemMenuId">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-file-earmark-x" viewBox="0 0 16 16">
+                                                <path d="M6.854 7.146a.5.5 0 1 0-.708.708L7.293 9l-1.147 1.146a.5.5 0 0 0 .708.708L8 9.707l1.146 1.147a.5.5 0 0 0 .708-.708L8.707 9l1.147-1.146a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146z" />
+                                                <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z" />
+                                            </svg>
+                                        </a>
+                                        @if (item.IsActive == true)
+                                        {
+                                            <a asp-action="Active" asp-route-id="@item.MasterItemMenuId">
+                                                <i class="fa-fa-sharp fa-solid fa-eye"></i>
+
+                                            </a>
+                                        }
+                                        else if (item.IsActive == false)
+                                        {
+                                            <a asp-action="Active" asp-route-id="@item.MasterItemMenuId">
+                                                <i class="fa-fa-sharp fa-solid fa-eye-slash"></i>
+
+                                            </a>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>

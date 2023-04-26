@@ -1,0 +1,112 @@
+﻿@model Restaurant.ViewModels.HomeModel
+
+@{
+    ViewData["Title"] = "Contactus";
+    Layout = "_Layout1";
+}
+
+<div class="breadcrumb-area bg-img ptb-80" style="background-image:url(/assets/img/banner/breath.jpg);">
+    <div class="container">
+        <div class="breadcrumb-content text-center">
+            <h3>Contact us</h3>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="active">Contact us</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="contact-area pt-100">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="contact-message-wrapper">
+                    <h4 class="contact-title mb-25">Leave Us a Message</h4>
+                    <div class="contact-message">
+                        <form asp-action="Contact" >
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="contact-form-style mb-20">
+                                        <input name="TransactionContactUFullName" class="form-control" placeholder="Full Name" type="text">
+                                    </div>
+                                    <div class="mc-news" aria-hidden="true">
+                                        <input name="viewName" hidden class="form-control" value="@ViewBag.viewName">
+                                    </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <div class="contact-form-style mb-20">
+                                        <input name="TransactionContactUEmail" class="form-control" placeholder="Email Address" type="email">
+                                    </div>
+                                    <div class="mc-news" aria-hidden="true">
+                                        <input name="viewName" hidden class="form-control" value="@ViewBag.viewName">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="contact-form-style mb-20">
+                                        <input name="TransactionContactUSubject" class="form-control" placeholder="Subject" type="text">
+                                    </div>
+                                    <div class="mc-news" aria-hidden="true">
+                                        <input name="viewName" hidden class="form-control" value="@ViewBag.viewName">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="contact-form-style">
+                                        <textarea name="TransactionContactUMessage" class="form-control" placeholder="Message"></textarea>
+                                        <div class="mc-news" aria-hidden="true">
+                                            <input name="viewName" hidden class="form-control" value="@ViewBag.viewName">
+                                        </div>
+                                        <button class="submit btn-style" type="submit">SEND MESSAGE</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <p class="form-messege"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="contact-info-area">
+                    <h4 class="contact-title mb-18">Contact Us</h4>
+                    <p>@Model.SystemSetting.SystemSettingWelcomeNoteDesc </p>
+                    <div class="contact-info-wrap">
+                        <div class="single-contact-info mb-40">
+                            <div class="contact-info-icon">
+                                <i class="fa fa-map-marker"></i>
+                            </div>
+                            <div class="contact-info-content">
+                                <h4>Location :</h4>
+                                <p>@Model.SystemSetting.SystemSettingMapLocation</p>
+                            </div>
+                        </div>
+                        <div class="single-contact-info mb-35">
+                            <div class="contact-info-icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="contact-info-content">
+                                <h4>phone :</h4>
+                                <p>@Model.SystemSetting.SystemSettingPhoneNumber </p>
+                            </div>
+                        </div>
+                        <div class="single-contact-info">
+                            <div class="contact-info-icon">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <div class="contact-info-content">
+                                <h4>mail :</h4>
+                                <p><a href="#">@Model.SystemSetting.SystemSettingEmail</a></p>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="map-area pt-100">
+            <div id="googleMap"></div>
+        </div>
+    </div>
+</div>
+<div class="pt-50"></div>
+

@@ -1,0 +1,63 @@
+﻿@model Restaurant.Models.MasterService
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="card-title">Details</h1>
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-controller="MasterService" asp-action="Index">MasterService</a></li>
+        <li class="breadcrumb-item active"><a asp-controller="MasterService" asp-action="Details">Details</a></li>
+    </ol>
+</nav>
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">MasterService</h5>
+                    <hr />
+                    <dl class="row">
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.MasterServiceTitle)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.MasterServiceTitle)
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.MasterServiceDesc)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.MasterServiceDesc)
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.MasterServiceImage)
+                        </dt>
+                        <dd class="col-sm-10">
+                            <img src="~/Images/MasterService/@Model.MasterServiceImage" style="max-width:50px" />
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.MasterServiceLogo)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.MasterServiceLogo)
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.IsActive)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.IsActive)
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.MasterServiceId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

@@ -1,0 +1,1122 @@
+﻿@{
+    ViewData["Title"] = "Menu";
+    Layout = "_Layout1";
+}
+<div class="breadcrumb-area bg-img ptb-80" style="background-image:url(/assets/img/banner/breath.jpg);">
+    <div class="container">
+        <div class="breadcrumb-content text-center">
+            <h3>menu</h3>
+            <ul>
+                <li>
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="active">menu page </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="product-menu-area pt-100 pb-70 gray-bg">
+    <div class="container">
+        <div class="section-title text-center mb-50">
+            <h2>Our Food Menu</h2>
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim nostrud exercitation ullamco laboris nisi.</p>
+        </div>
+
+        <div class="menu-tab-wrap mb-50">
+            <div class="menu-tab-list nav text-center">
+                @foreach (var item in Model.MasterCategoryMenu)
+                {
+                    <a href="localhost:37420/Home/Menu/@item.MasterCategoryMenuId" data-bs-toggle="@item.MasterCategoryMenuId">
+
+                        @item.MasterCategoryMenuName
+
+                    </a>
+
+                }
+
+                @*<a class="active" href="#tab1" data-bs-toggle="tab">
+                All item
+                </a>
+                <a href="#tab2" data-bs-toggle="tab">
+                breakfast
+                </a>
+                <a href="#tab3" data-bs-toggle="tab">
+                lunch
+                </a>
+                <a href="#tab4" data-bs-toggle="tab">
+                dinner
+                </a>
+                <a href="#tab5" data-bs-toggle="tab">
+                party
+                </a>
+                <a href="#tab6" data-bs-toggle="tab">
+                coffee
+                </a>*@
+            </div>
+        </div>
+
+        <div class="tab-content jump">
+            <div class="tab-pane active">
+                <div class="row">
+                    @foreach (var item in Model.MasterItemMenu)
+                    {
+                        @foreach (var item1 in Model.MasterCategoryMenu)
+                        {
+                            if (item.MasterCategoryMenuId == item1.MasterCategoryMenuId)
+                            {
+
+
+                                <div class="col-lg-6" id="@item.MasterCategoryMenuId">
+
+
+
+                                    <div class="single-menu-product mb-30">
+                                        <div class="menu-product-img">
+                                            <img alt="" src="~/Images/MasterItemMenu/@item.MasterItemMenuImageUrl">
+                                        </div>
+                                        <div class="menu-product-content">
+                                            <div class="menu-title-price">
+                                                <div class="menu-title">
+                                                    <h4>
+                                                        @item.MasterItemMenuTitle
+                                                    </h4>
+                                                </div>
+                                                <div class="menu-price">
+                                                    <span>$@item.MasterItemMenuPrice</span>
+                                                </div>
+                                            </div>
+                                            <p>@item1.MasterCategoryMenuName</p>
+                                        </div>
+
+
+                                    </div>
+
+
+
+
+
+
+                                    @*<div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-1.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Lamb Salad with Fregola.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$100</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-2.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Ultimate Bacon Burger.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$150</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-3.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Ultimate Bacon Burger.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$200</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-4.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Black Bean & Veggie Fajitas.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$250</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-5.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Oldtimer with Cheese.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$170</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-6.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Crispy Fiery Pepper Crispers.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$120</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-1.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Lamb Salad with Fregola.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$180</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-2.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Ultimate Bacon Burger.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$170</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        /***<div id="tab2" class="tab-pane">
+                        <div class="row">
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-4.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Black Bean & Veggie Fajitas.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$250</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-5.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Oldtimer with Cheese.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$170</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-6.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Crispy Fiery Pepper Crispers.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$120</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-1.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Lamb Salad with Fregola.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$180</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-2.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Ultimate Bacon Burger.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$170</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-1.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Lamb Salad with Fregola.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$100</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-2.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Ultimate Bacon Burger.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$150</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-3.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Ultimate Bacon Burger.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$200</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        </div>
+                        /******<div id="tab3" class="tab-pane">
+                        <div class="row">
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-2.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Ultimate Bacon Burger.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$150</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-1.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Lamb Salad with Fregola.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$100</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-3.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Ultimate Bacon Burger.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$200</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-4.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Black Bean & Veggie Fajitas.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$250</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-5.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Oldtimer with Cheese.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$170</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-6.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Crispy Fiery Pepper Crispers.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$120</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-1.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Lamb Salad with Fregola.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$180</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>
+                        </div>
+                        <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                        <div class="menu-product-img">
+                        <img alt="" src="~/assets/img/product/menu-2.jpg">
+                        </div>
+                        <div class="menu-product-content">
+                        <div class="menu-title-price">
+                        <div class="menu-title">
+                        <h4>
+                        Ultimate Bacon Burger.
+                        </h4>
+                        </div>
+                        <div class="menu-price">
+                        <span>$170</span>
+                        </div>
+                        </div>
+                        <p>Categories: Subway, Masala, Indian</p>
+                        </div>
+                        </div>*@
+                                </div>
+                            }
+                        }
+                    }
+
+                </div>
+            </div>
+            <div id="tab4" class="tab-pane">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-6.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Crispy Fiery Pepper Crispers.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$120</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-1.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Lamb Salad with Fregola.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$180</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-2.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Ultimate Bacon Burger.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$170</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-1.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Lamb Salad with Fregola.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$100</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-2.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Ultimate Bacon Burger.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$150</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-3.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Ultimate Bacon Burger.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$200</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-4.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Black Bean & Veggie Fajitas.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$250</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-5.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Oldtimer with Cheese.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$170</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="tab5" class="tab-pane">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-3.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Ultimate Bacon Burger.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$200</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-4.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Black Bean & Veggie Fajitas.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$250</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-1.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Lamb Salad with Fregola.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$100</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-2.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Ultimate Bacon Burger.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$150</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-3.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Ultimate Bacon Burger.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$200</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-4.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Black Bean & Veggie Fajitas.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$250</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-5.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Oldtimer with Cheese.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$170</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-6.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Crispy Fiery Pepper Crispers.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$120</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="tab6" class="tab-pane">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-1.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Lamb Salad with Fregola.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$100</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-2.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Ultimate Bacon Burger.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$150</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-5.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Oldtimer with Cheese.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$170</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-6.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Crispy Fiery Pepper Crispers.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$120</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-1.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Lamb Salad with Fregola.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$180</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-2.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Ultimate Bacon Burger.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$170</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-1.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Lamb Salad with Fregola.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$180</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="single-menu-product mb-30">
+                            <div class="menu-product-img">
+                                <img alt="" src="~/assets/img/product/menu-2.jpg">
+                            </div>
+                            <div class="menu-product-content">
+                                <div class="menu-title-price">
+                                    <div class="menu-title">
+                                        <h4>
+                                            Ultimate Bacon Burger.
+                                        </h4>
+                                    </div>
+                                    <div class="menu-price">
+                                        <span>$170</span>
+                                    </div>
+                                </div>
+                                <p>Categories: Subway, Masala, Indian</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="brand-logo-area ptb-100">
+    <div class="container">
+        <div class="brand-logo-active owl-carousel">
+            @foreach (var item in Model.MasterPartner)
+            {
+                <div class="single-brand-logo">
+                    <img alt="" src="~/Images/MasterPartner/@item.MasterPartnerLogoImageUrl">
+                </div>
+
+            }
+            @*<div class="single-brand-logo">
+            <img alt="" src="~/assets/img/brand-logo/1.png">
+            </div>
+            <div class="single-brand-logo">
+            <img alt="" src="~/assets/img/brand-logo/2.png">
+            </div>
+            <div class="single-brand-logo">
+            <img alt="" src="~/assets/img/brand-logo/3.png">
+            </div>
+            <div class="single-brand-logo">
+            <img alt="" src="~/assets/img/brand-logo/4.png">
+            </div>
+            <div class="single-brand-logo">
+            <img alt="" src="~/assets/img/brand-logo/5.png">
+            </div>
+            <div class="single-brand-logo">
+            <img alt="" src="~/assets/img/brand-logo/2.png">
+            </div>*@
+
+        </div>
+    </div>
+</div>
+
+
+

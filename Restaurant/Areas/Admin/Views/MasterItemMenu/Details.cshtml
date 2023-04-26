@@ -1,0 +1,81 @@
+﻿@model Restaurant.Models.MasterItemMenu
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="card-title">Details</h1>
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-controller="MasterItemMenu" asp-action="Index">MasterItemMenu</a></li>
+        <li class="breadcrumb-item active"><a asp-controller="MasterItemMenu" asp-action="Details">Details</a></li>
+    </ol>
+</nav>
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">MasterItemMenu</h5>
+                    <hr />
+                    <dl class="row">
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.MasterItemMenuTitle)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.MasterItemMenuTitle)
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.MasterItemMenuBreef)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.MasterItemMenuBreef)
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.MasterItemMenuDesc)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.MasterItemMenuDesc)
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.MasterItemMenuPrice)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.MasterItemMenuPrice)
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.MasterItemMenuImageUrl)
+                        </dt>
+                        <dd class="col-sm-10">
+                            <img src="~/Images/MasterItemMenu/@Model.MasterItemMenuImageUrl"style="max-width:50px" />
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.MasterItemMenuDate)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.MasterItemMenuDate)
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.MasterCategoryMenu.MasterCategoryMenuName)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.MasterCategoryMenu.MasterCategoryMenuName)
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.IsActive)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.IsActive)
+
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.MasterItemMenuId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

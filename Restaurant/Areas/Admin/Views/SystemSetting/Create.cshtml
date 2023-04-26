@@ -1,0 +1,99 @@
+﻿@model Restaurant.ViewModels.SystemSettingModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<h1 class="card-title">Create</h1>
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-controller="SystemSetting" asp-action="Index">SystemSetting</a></li>
+        <li class="breadcrumb-item active"><a asp-controller="SystemSetting" asp-action="Create">Create</a></li>
+    </ol>
+</nav>
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">SystemSetting</h5>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <form asp-action="Create" enctype="multipart/form-data">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="File" class="col-sm-12 col-form-label"></label>
+                                    <input asp-for="File" class="form-control" />
+                                    <span asp-validation-for="File" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="File1" class="col-sm-12 col-form-label"></label>
+                                    <input asp-for="File1" class="form-control" />
+                                    <span asp-validation-for="File1" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="SystemSettingCopyright" class="col-sm-12 col-form-label"></label>
+                                    <input asp-for="SystemSettingCopyright" class="form-control" />
+                                    <span asp-validation-for="SystemSettingCopyright" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="SystemSettingWelcomeNoteTitle" class="col-sm-12 col-form-label"></label>
+                                    <input asp-for="SystemSettingWelcomeNoteTitle" class="form-control" />
+                                    <span asp-validation-for="SystemSettingWelcomeNoteTitle" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="SystemSettingWelcomeNoteBreef" class="col-sm-12 col-form-label"></label>
+                                    <input asp-for="SystemSettingWelcomeNoteBreef" class="form-control" />
+                                    <span asp-validation-for="SystemSettingWelcomeNoteBreef" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="SystemSettingWelcomeNoteDesc" class="col-sm-12 col-form-label"></label>
+                                    <input asp-for="SystemSettingWelcomeNoteDesc" class="form-control" />
+                                    <span asp-validation-for="SystemSettingWelcomeNoteDesc" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="SystemSettingWelcomeNoteUrl" class="col-sm-12 col-form-label"></label>
+                                    <input asp-for="SystemSettingWelcomeNoteUrl" class="form-control" />
+                                    <span asp-validation-for="SystemSettingWelcomeNoteUrl" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="File2" class="col-sm-12 col-form-label"></label>
+                                    <input asp-for="File2" class="form-control" />
+                                    <span asp-validation-for="File2" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="SystemSettingMapLocation" class="col-sm-12 col-form-label"></label>
+                                    <input asp-for="SystemSettingMapLocation" class="form-control" />
+                                    <span asp-validation-for="SystemSettingMapLocation" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="SystemSettingEmail" class="col-sm-12 col-form-label"></label>
+                                    <input asp-for="SystemSettingEmail" class="form-control" />
+                                    <span asp-validation-for="SystemSettingEmail" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="SystemSettingPhoneNumber" class="col-sm-12 col-form-label"></label>
+                                    <input asp-for="SystemSettingPhoneNumber" class="form-control" />
+                                    <span asp-validation-for="SystemSettingPhoneNumber" class="text-danger"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <input type="submit" value="Create" class="btn btn-primary" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+                    <div>
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+

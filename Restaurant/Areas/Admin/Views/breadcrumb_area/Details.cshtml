@@ -1,0 +1,47 @@
+﻿@model Restaurant.Models.breadcrumb_area
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1 class="card-title">Details</h1>
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-controller="breadcrumb_area" asp-action="Index">breadcrumb_area</a></li>
+        <li class="breadcrumb-item active"><a asp-controller="breadcrumb_area" asp-action="Details">Details</a></li>
+    </ol>
+</nav>
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">breadcrumb_area</h5>
+                    <hr />
+                    <dl class="row">
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.breadcrumb_areaUrlImage)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.breadcrumb_areaUrlImage)
+                        </dd>
+                        <dt class="col-sm-6">
+                            @Html.DisplayNameFor(model => model.IsActive)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.IsActive)
+                        </dd>
+
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</section>
+                <div>
+                    <a asp-action="Edit" asp-route-id="@Model.breadcrumb_areaId">Edit</a> |
+                    <a asp-action="Index">Back to List</a>
+                </div>

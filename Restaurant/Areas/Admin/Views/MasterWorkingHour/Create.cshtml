@@ -1,0 +1,52 @@
+﻿@model Restaurant.Models.MasterWorkingHour
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 class="card-title">Create</h1>
+<nav>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-controller="MasterWorkingHour" asp-action="Index">MasterWorkingHour</a></li>
+        <li class="breadcrumb-item active"><a asp-controller="MasterWorkingHour" asp-action="Create">Create</a></li>
+    </ol>
+</nav>
+<section class="section">
+    <div class="row">
+        <div class="col-lg-12">
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">MasterWorkingHour</h5>
+                    <hr />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <form asp-action="Create">
+                                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                <div class="form-group">
+                                    <label asp-for="MasterWorkingHourIdName" class="col-sm-12 col-form-label"></label>
+                                    <input asp-for="MasterWorkingHourIdName" class="form-control" />
+                                    <span asp-validation-for="MasterWorkingHourIdName" class="text-danger"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="MasterWorkingHourIdTimeFormTo" class="col-sm-12 col-form-label"></label>
+                                    <input asp-for="MasterWorkingHourIdTimeFormTo" class="form-control" />
+                                    <span asp-validation-for="MasterWorkingHourIdTimeFormTo" class="text-danger"></span>
+                               
+                                <div class="form-group">
+                                    <input type="submit" value="Create" class="btn btn-primary" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+                    <div>
+                        <a asp-action="Index">Back to List</a>
+                    </div>
+
